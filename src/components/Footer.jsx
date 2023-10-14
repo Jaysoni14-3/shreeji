@@ -96,7 +96,6 @@ const Footer = () => {
 
         <div className="copyright-text text-center mt-6">
           <p>Shreeji Copyrights. 2023 All rights reserved.</p>
-          {/* is github working? */}
         </div>
       </footer>
     </div>
