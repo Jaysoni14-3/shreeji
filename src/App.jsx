@@ -26,7 +26,7 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/shreeji" element={<Homepage />}></Route>
+        <Route path="/" element={<Homepage />}></Route>
         <Route path="/about" element={<Aboutpage />}></Route>
         <Route path="/gallery" element={<Gallerypage />}></Route>
         <Route path="/services" element={<OurServicespage />}></Route>
