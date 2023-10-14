@@ -9,7 +9,7 @@ const Navigation = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
 
   const navLinks = [
-    { id: 1, linkName: "Home", linkHref: "/" },
+    { id: 1, linkName: "Home", linkHref: "/shreeji" },
     { id: 2, linkName: "About", linkHref: "/about" },
     { id: 3, linkName: "Gallery", linkHref: "/gallery" },
     { id: 4, linkName: "Our services", linkHref: "/services" },
@@ -20,7 +20,9 @@ const Navigation = () => {
   return (
     <header className="navigation-bar relative flex-between items-center w-full py-1 px-6 lg:px-16">
       <div className="logo w-[145px]">
-        <img src={Logo} className="w-full" alt="Shreeji" />
+        <Link to="/shreeji">
+          <img src={Logo} className="w-full" alt="Shreeji" />
+        </Link>
       </div>
       {/*  */}
       <div
