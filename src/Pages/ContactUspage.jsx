@@ -11,6 +11,7 @@ import ContactUsMapImage from "../assets/Images/Map-image.png";
 import { Link } from "react-router-dom";
 
 const ContactUspage = () => {
+  // todo: add contact us paragraph instead of lorem ipsum
   const contactUsData = {
     pageHeader: "We are open to discuss",
     paragraph:
