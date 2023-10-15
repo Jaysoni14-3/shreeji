@@ -21,31 +21,33 @@ const AboutSection = () => {
 
   return (
     // About us section
-    <section className="about-section section max-container text-center flex-center flex-col">
-      <div className="text-container max-w-[645px] ">
-        <span className="small-header">{aboutSectionData.smallHeader}</span>
-        <h2 className="header-text">{aboutSectionData.header}</h2>
-        <p className="text-neutral-600 ">{aboutSectionData.bodyText}</p>
-      </div>
-      <div className="about-images w-full my-6 grid place-content-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {aboutImages.map((image) => (
-          <div
-            key={image.id}
-            className="about-image-container overflow-hidden rounded-lg"
-          >
-            <img
-              src={image.imgSrc}
-              alt={image.altTag}
-              className="object-cover aspect-video w-full h-full "
-            />
-          </div>
-        ))}
-      </div>
-      <Link to={"/about"} className="outline-btn flex-center group/button">
-        Learn more
-        <FaAngleRight className="ms-1 group-hover/button:ms-2 transition-[margin]" />
-      </Link>
-    </section>
+    <div className="bg-neutral-50">
+      <section className="about-section section max-container text-center flex-center flex-col">
+        <div className="text-container max-w-[645px] ">
+          <span className="small-header">{aboutSectionData.smallHeader}</span>
+          <h2 className="header-text">{aboutSectionData.header}</h2>
+          <p className="text-neutral-600 ">{aboutSectionData.bodyText}</p>
+        </div>
+        <div className="about-images w-full my-6 grid place-content-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {aboutImages.map((image) => (
+            <div
+              key={image.id}
+              className="about-image-container overflow-hidden rounded-lg"
+            >
+              <img
+                src={image.imgSrc}
+                alt={image.altTag}
+                className="object-cover aspect-video w-full h-full "
+              />
+            </div>
+          ))}
+        </div>
+        <Link to={"/about"} className="outline-btn flex-center group/button">
+          Learn more
+          <FaAngleRight className="ms-1 group-hover/button:ms-2 transition-[margin]" />
+        </Link>
+      </section>
+    </div>
   );
 };
 

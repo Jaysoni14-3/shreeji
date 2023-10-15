@@ -18,7 +18,7 @@ const Navigation = () => {
   ];
 
   return (
-    <header className="navigation-bar relative flex-between items-center w-full py-1 px-6 lg:px-16">
+    <header className="navigation-bar relative flex-between items-center w-full py-2 px-6 lg:px-16">
       <div className="logo w-[145px]">
         <Link to="/">
           <img src={Logo} className="w-full" alt="Shreeji" />

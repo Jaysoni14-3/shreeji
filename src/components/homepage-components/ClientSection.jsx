@@ -28,51 +28,53 @@ const ClientSection = () => {
   ];
 
   return (
-    <section className="our-clients-section section max-container text-center flex-center flex-col">
-      <div className="text-container w-full ">
-        <span className="small-header">{clientSectionData.smallHeader}</span>
-        <h2 className="header-text">{clientSectionData.header}</h2>
-      </div>
-      <div className="section-body client-container w-full mt-8">
-        <Swiper
-          slidesPerView={2}
-          centeredSlides={false}
-          spaceBetween={10}
-          grabCursor={true}
-          freeMode={false}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-          }}
-          modules={[Zoom, Autoplay]}
-          breakpoints={{
-            600: {
-              slidesPerView: 3,
-            },
-            768: {
-              slidesPerView: 4,
-            },
-            1024: {
-              slidesPerView: 5,
-            },
-          }}
-        >
-          {clientImages.map((image) => (
-            <SwiperSlide className="select-none" key={image.id}>
-              <div className="client-image-container w-[160px] h-auto overflow-hidden">
-                <img
-                  className="bg-center object-cover w-full h-full aspect-video"
-                  src={image.imgSrc}
-                  alt={image.imgSrc}
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+    <div className="bg-neutral-50">
+      <section className="our-clients-section section max-container text-center flex-center flex-col">
+        <div className="text-container w-full ">
+          <span className="small-header">{clientSectionData.smallHeader}</span>
+          <h2 className="header-text">{clientSectionData.header}</h2>
+        </div>
+        <div className="section-body client-container w-full mt-8">
+          <Swiper
+            slidesPerView={2}
+            centeredSlides={false}
+            spaceBetween={10}
+            grabCursor={true}
+            freeMode={false}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: true,
+              pauseOnMouseEnter: true,
+            }}
+            modules={[Zoom, Autoplay]}
+            breakpoints={{
+              600: {
+                slidesPerView: 3,
+              },
+              768: {
+                slidesPerView: 4,
+              },
+              1024: {
+                slidesPerView: 5,
+              },
+            }}
+          >
+            {clientImages.map((image) => (
+              <SwiperSlide className="select-none" key={image.id}>
+                <div className="client-image-container w-[160px] h-auto overflow-hidden">
+                  <img
+                    className="bg-center object-cover w-full h-full aspect-video"
+                    src={image.imgSrc}
+                    alt={image.imgSrc}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+    </div>
   );
 };
 

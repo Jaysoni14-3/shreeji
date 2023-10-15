@@ -41,7 +41,7 @@ const GallerySection = () => {
       </div>
       <div className="section-body gallery-image-wrapper grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 mb-10">
         {galleryImages.map((image) => (
-          <div key={image.id} className="gallery-image-container">
+          <div key={image.id} className="gallery-image-container flex flex-col">
             <img
               src={image.src}
               alt={image.altText}

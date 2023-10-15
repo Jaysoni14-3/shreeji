@@ -100,7 +100,7 @@ const Footer = () => {
                     location.pathname === link.linkHref
                       ? "text-primary-color bg-blue-50 text-center"
                       : "text-neutral-100 bg-[#033e69]"
-                  } p-2 mb-2 rounded-lg lg:mb-0 hover:bg-blue-50 hover:text-text-color footer-link-item`}
+                  } p-2 mb-2 rounded-lg lg:mb-0 hover:bg-blue-50 hover:text-text-color footer-link-item transition-colors`}
                 >
                   <span>{link.linkName}</span>
                 </Link>
