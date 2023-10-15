@@ -5,6 +5,7 @@ import ServiceCardIcon3 from "../../assets/Images/our-service-icon-3.png";
 import ServiceCardIcon4 from "../../assets/Images/our-service-icon-4.png";
 import ServiceCardIcon5 from "../../assets/Images/our-service-icon-5.png";
 import ServiceCardIcon6 from "../../assets/Images/our-service-icon-6.png";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const serviceSectionData = {
@@ -81,13 +82,10 @@ const ServicesSection = () => {
             </div>
           ))}
         </div>
-        <button
-          onClick={() => (location.href = "/services")}
-          className="outline-btn flex-center group/button"
-        >
+        <Link to={"/services"} className="outline-btn flex-center group/button">
           Explore more
           <FaAngleRight className="ms-1 group-hover/button:ms-2 transition-[margin]" />
-        </button>
+        </Link>
       </section>
     </div>
   );

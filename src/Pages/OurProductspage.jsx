@@ -68,7 +68,7 @@ const OurProductspage = () => {
     fetchData();
   }, []);
 
-  console.log(products);
+  // console.log(products);
 
   const callUs = () => {
     window.open("tel:+91 8424936900");

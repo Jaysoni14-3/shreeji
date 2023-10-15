@@ -2,6 +2,7 @@ import { FaAngleRight } from "react-icons/fa";
 import aboutImage1 from "../../assets/Images/about-us-image-1.png";
 import aboutImage2 from "../../assets/Images/about-us-image-2.png";
 import aboutImage3 from "../../assets/Images/about-us-image-3.png";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   const aboutImages = [
@@ -40,13 +41,10 @@ const AboutSection = () => {
           </div>
         ))}
       </div>
-      <button
-        onClick={() => (location.href = "/about")}
-        className="outline-btn flex-center group/button"
-      >
+      <Link to={"/about"} className="outline-btn flex-center group/button">
         Learn more
         <FaAngleRight className="ms-1 group-hover/button:ms-2 transition-[margin]" />
-      </button>
+      </Link>
     </section>
   );
 };

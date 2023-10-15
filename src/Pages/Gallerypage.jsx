@@ -28,31 +28,145 @@ const Gallerypage = () => {
     setSelectedImageUrl("");
   };
 
-  const images = [
-    { path: GalleryImage1 },
-    { path: GalleryImage2 },
-    { path: GalleryImage3 },
-    { path: GalleryImage4 },
-    { path: GalleryImage5 },
-    { path: GalleryImage6 },
-    { path: GalleryImage7 },
-    { path: GalleryImage8 },
+  const imagesData = [
+    {
+      id: 1,
+      imgSrc: GalleryImage1,
+      category: "swimmingPool",
+    },
+    {
+      id: 2,
+      imgSrc: GalleryImage2,
+      category: "fountain",
+    },
+    {
+      id: 3,
+      imgSrc: GalleryImage3,
+      category: "fountain",
+    },
+    {
+      id: 4,
+      imgSrc: GalleryImage4,
+      category: "jaccuzzi",
+    },
+    {
+      id: 5,
+      imgSrc: GalleryImage5,
+      category: "swimmingPool",
+    },
+    {
+      id: 6,
+      imgSrc: GalleryImage6,
+      category: "sauna",
+    },
+    {
+      id: 7,
+      imgSrc: GalleryImage7,
+      category: "jaccuzzi",
+    },
+    {
+      id: 8,
+      imgSrc: GalleryImage8,
+      category: "sauna",
+    },
+    {
+      id: 9,
+      imgSrc: GalleryImage6,
+      category: "sauna",
+    },
+    {
+      id: 10,
+      imgSrc: GalleryImage7,
+      category: "jaccuzzi",
+    },
+    {
+      id: 11,
+      imgSrc: GalleryImage8,
+      category: "sauna",
+    },
   ];
+
+  const swimmingPoolImages = imagesData.filter(
+    (image) => image.category === "swimmingPool"
+  );
+
+  const jaccuzziImages = imagesData.filter(
+    (image) => image.category === "jaccuzzi"
+  );
+
+  const saunaImages = imagesData.filter((image) => image.category === "sauna");
+
+  const fountainImages = imagesData.filter(
+    (image) => image.category === "fountain"
+  );
 
   return (
     <>
-      <section className="gallery-page section max-container grid grid-cols-2 sm:grid-cols-3 gap-4 ">
-        {images.map((image, index) => (
-          <div key={index} className="image-container">
-            <LazyLoadImage
-              effect="blur"
-              className="h-auto w-full object-cover bg-center rounded-lg"
-              src={image.path}
-              alt={image.path}
-              onClick={() => handleImageClick(image.path)}
-            />
+      <section className="gallery-page section max-container">
+        <div className="swimming-pool-container">
+          <h3 className="uppercase text-black">Swimming Pools</h3>
+          <div className="swimming-pool-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {swimmingPoolImages.map((image) => (
+              <div key={image.id} className="image-container">
+                <LazyLoadImage
+                  effect="blur"
+                  className="h-auto w-full object-cover bg-center rounded-lg"
+                  src={image.imgSrc}
+                  alt={image.imgSrc}
+                  onClick={() => handleImageClick(image.imgSrc)}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="jaccuzzi-container mt-4">
+          <h3 className="uppercase text-black">Jaccuzzis</h3>
+          <div className="jaccuzzi-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {jaccuzziImages.map((image) => (
+              <div key={image.id} className="image-container">
+                <LazyLoadImage
+                  effect="blur"
+                  className="h-auto w-full object-cover bg-center rounded-lg"
+                  src={image.imgSrc}
+                  alt={image.imgSrc}
+                  onClick={() => handleImageClick(image.imgSrc)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="sauna-container mt-4">
+          <h3 className="uppercase text-black">Saunas</h3>
+          <div className="sauna-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {saunaImages.map((image) => (
+              <div key={image.id} className="image-container">
+                <LazyLoadImage
+                  effect="blur"
+                  className="h-auto w-full object-cover bg-center rounded-lg"
+                  src={image.imgSrc}
+                  alt={image.imgSrc}
+                  onClick={() => handleImageClick(image.imgSrc)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="fountain-container mt-4">
+          <h3 className="uppercase text-black">Fountains</h3>
+          <div className="statue-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {fountainImages.map((image) => (
+              <div key={image.id} className="image-container">
+                <LazyLoadImage
+                  effect="blur"
+                  className="h-auto w-full object-cover bg-center rounded-lg"
+                  src={image.imgSrc}
+                  alt={image.imgSrc}
+                  onClick={() => handleImageClick(image.imgSrc)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
       <ImageModal
         isOpen={isModalOpen}

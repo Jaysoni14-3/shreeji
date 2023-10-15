@@ -1,5 +1,6 @@
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import AboutUsImage from "../../assets/Images/about-us-page.png";
+import { Link } from "react-router-dom";
 
 const AboutShreejiSection = () => {
   const aboutShreejiSectionData = {
@@ -14,9 +15,12 @@ const AboutShreejiSection = () => {
     <section className="about-us section max-container flex flex-col">
       <div className="section-header">
         <div className="breadcrumb uppercase text-sm flex items-center justify-start gap-2">
-          <div className="previous-page cursor-pointer flex items-center text-neutral-500">
+          <Link
+            to={"/"}
+            className="previous-page cursor-pointer flex items-center text-neutral-500"
+          >
             <FaLongArrowAltLeft className="me-1" /> Home
-          </div>
+          </Link>
           <div className="breadcrumb-seperator">/</div>
           <div className="current-page text-neutral-950">About us</div>
         </div>

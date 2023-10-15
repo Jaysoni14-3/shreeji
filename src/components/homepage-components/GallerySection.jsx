@@ -3,6 +3,7 @@ import GalleryImage1 from "../../assets/Images/Gallery-images/gallery-image-1.pn
 import GalleryImage2 from "../../assets/Images/Gallery-images/gallery-image-2.png";
 import GalleryImage3 from "../../assets/Images/Gallery-images/gallery-image-3.png";
 import GalleryImage4 from "../../assets/Images/Gallery-images/gallery-image-4.png";
+import { Link } from "react-router-dom";
 
 const GallerySection = () => {
   const gallerySectionData = {
@@ -11,10 +12,25 @@ const GallerySection = () => {
   };
 
   const galleryImages = [
-    { id: 1, src: GalleryImage1, altText: "gallery-image" },
-    { id: 2, src: GalleryImage2, altText: "gallery-image" },
-    { id: 3, src: GalleryImage3, altText: "gallery-image" },
-    { id: 4, src: GalleryImage4, altText: "gallery-image" },
+    {
+      id: 1,
+      src: GalleryImage1,
+      altText: "gallery-image",
+      category: "Swimming pool",
+    },
+    {
+      id: 2,
+      src: GalleryImage2,
+      altText: "gallery-image",
+      category: "Jaccuzzi",
+    },
+    { id: 3, src: GalleryImage3, altText: "gallery-image", category: "Sauna" },
+    {
+      id: 4,
+      src: GalleryImage4,
+      altText: "gallery-image",
+      category: "Fountain",
+    },
   ];
 
   return (
@@ -23,7 +39,7 @@ const GallerySection = () => {
         <span className="small-header">{gallerySectionData.smallHeader}</span>
         <h2 className="header-text">{gallerySectionData.header}</h2>
       </div>
-      <div className="section-body gallery-image-wrapper grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  my-6">
+      <div className="section-body gallery-image-wrapper grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 mb-10">
         {galleryImages.map((image) => (
           <div key={image.id} className="gallery-image-container">
             <img
@@ -31,16 +47,14 @@ const GallerySection = () => {
               alt={image.altText}
               className="rounded-2xl w-full h-full object-cover bg-center"
             />
+            <p className="mt-2 cursor-default">{image.category}</p>
           </div>
         ))}
       </div>
-      <button
-        onClick={() => (location.href = "/gallery")}
-        className="outline-btn flex-center group/button"
-      >
-        See more
+      <Link to={"/gallery"} className="outline-btn flex-center group/button">
+        See all
         <FaAngleRight className="ms-1 group-hover/button:ms-2 transition-[margin]" />
-      </button>
+      </Link>
     </section>
   );
 };

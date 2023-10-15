@@ -1,6 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/Images/Shreeji_logo.png";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
   const location = useLocation();
@@ -36,12 +43,30 @@ const Footer = () => {
     { id: 6, linkName: "Our products", linkHref: "/products" },
   ];
 
+  const socialLinks = [
+    {
+      id: 1,
+      href: "#",
+      icon: <FaFacebookF className="text-primary-color" size={18} />,
+    },
+    {
+      id: 2,
+      href: "#",
+      icon: <FaInstagram className="text-primary-color" size={18} />,
+    },
+    {
+      id: 3,
+      href: "#",
+      icon: <FaYoutube className="text-primary-color" size={18} />,
+    },
+  ];
+
   return (
     <div className="footer bg-[#073a5f] text-white py-6 px-12">
-      <footer className="footer">
-        <div className="footer-details flex justify-between flex-col sm:flex-row sm:gap-4">
-          <div className="company-details-links md:flex w-full">
-            <div className="company-details max-w-[350px]">
+      <footer className="footer ">
+        <div className="footer-details grid md:grid-cols-2 lg:grid-cols-3 sm:gap-4">
+          <div className="company-details-links">
+            <div className="company-details">
               <div className="footer-logo w-[145px] mb-4">
                 <Link to={"/"}>
                   <img src={Logo} alt="shreeji" />
@@ -60,16 +85,21 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <hr className="mt-4 md:hidden" />
-            <div className="company-links min-w-[250px] ms-auto md:me-auto h-fit grid gap-2 text-start grid-cols-2 mt-6 md:mt-0">
+          </div>
+
+          <hr className="mt-4 sm:hidden" />
+
+          <div className="company-links h-fit w-full mt-6 md:mt-0">
+            <h4 className="text-start">Company links</h4>
+            <div className="w-full grid gap-3 text-center grid-cols-2 mt-6">
               {footerLinks.map((link) => (
                 <Link
                   key={link.id}
                   to={link.linkHref}
                   className={`${
                     location.pathname === link.linkHref
-                      ? "text-primary-color bg-blue-50 text-start"
-                      : "text-neutral-100"
+                      ? "text-primary-color bg-blue-50 text-center"
+                      : "text-neutral-100 bg-[#033e69]"
                   } p-2 mb-2 rounded-lg lg:mb-0 hover:bg-blue-50 hover:text-text-color footer-link-item`}
                 >
                   <span>{link.linkName}</span>
@@ -77,19 +107,22 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <hr className="md:hidden" />
-          <div className="social-links min-w-[120px] mt-6 md:mt-0">
-            <h4>Find us on</h4>
-            <div className="social-links-container mt-4 flex flex-col gap-4 text-neutral-400">
-              <Link to={""} className="hover:text-neutral-100" target="_blank">
-                Facebook
-              </Link>
-              <Link to={""} className="hover:text-neutral-100" target="_blank">
-                Instagram
-              </Link>
-              <Link to={""} className="hover:text-neutral-100" target="_blank">
-                Youtube
-              </Link>
+
+          <hr className="sm:hidden" />
+
+          <div className="social-links mt-6 md:mt-0">
+            <h4 className="text-center">Find us on</h4>
+            <div className="social-links-container mt-6 flex flex-row justify-center gap-4 text-neutral-400">
+              {socialLinks.map((link) => (
+                <Link
+                  to={link.href}
+                  key={link.id}
+                  className="bg-blue-100 p-4 rounded-lg hover:bg-blue-200 w-max"
+                  target="_blank"
+                >
+                  {link.icon}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
