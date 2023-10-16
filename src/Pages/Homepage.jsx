@@ -4,7 +4,7 @@ import ContactSection from "../components/homepage-components/ContactSection";
 import GallerySection from "../components/homepage-components/GallerySection";
 import HeroSection from "../components/homepage-components/HeroSection";
 import ServicesSection from "../components/homepage-components/ServicesSection";
-import TestimonialSection from "../components/homepage-components/TestimonialSection";
+// import TestimonialSection from "../components/homepage-components/TestimonialSection";
 
 const Homepage = () => {
   return (
@@ -14,7 +14,7 @@ const Homepage = () => {
       <ServicesSection />
       <ClientSection />
       <GallerySection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <ContactSection />
     </>
   );

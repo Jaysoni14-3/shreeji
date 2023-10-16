@@ -17,7 +17,7 @@ const ServicesSection = () => {
     {
       id: 1,
       cardIcon: ServiceCardIcon1,
-      cardHeader: "Pool design and Construction",
+      cardHeader: "Pool Design and Construction",
       cardBody:
         "We help design and build custom swimming pools as per your requirements.",
     },

@@ -2,9 +2,9 @@ import HeroImage from "../../assets/Images/Hero-image.jpg";
 
 const HeroSection = () => {
   const heroSectionData = {
-    smallHeader: "IMMERSE YORSELF INTO AQUATIC LUXURY.",
+    smallHeader: "IMMERSE YOURSELF INTO AQUATIC LUXURY",
     header:
-      "Dive into Luxury and Relaxation with Shreeji: Your Premier Swimming Pool Destination.",
+      "Dive into luxury and relaxation with Shreeji: Your premier swimming pool destination.",
     bodyText:
       "With our expertise in swimming pool consultancy and exceptional filtration systems, we offer a seamless experience from concept to completion. Let us bring your vision to life",
   };

@@ -2,7 +2,7 @@ import { FaAngleRight } from "react-icons/fa";
 import GalleryImage1 from "../../assets/Images/Gallery-images/gallery-image-1.png";
 import GalleryImage2 from "../../assets/Images/Gallery-images/gallery-image-2.png";
 import GalleryImage3 from "../../assets/Images/Gallery-images/gallery-image-3.png";
-import GalleryImage4 from "../../assets/Images/Gallery-images/gallery-image-4.png";
+import GalleryImage4 from "../../assets/Images/Gallery-images/fountain.jpg";
 import { Link } from "react-router-dom";
 
 const GallerySection = () => {
@@ -24,12 +24,18 @@ const GallerySection = () => {
       altText: "gallery-image",
       category: "Jaccuzzi",
     },
-    { id: 3, src: GalleryImage3, altText: "gallery-image", category: "Sauna" },
+
     {
       id: 4,
       src: GalleryImage4,
       altText: "gallery-image",
       category: "Fountain",
+    },
+    {
+      id: 3,
+      src: GalleryImage3,
+      altText: "gallery-image",
+      category: "Steam and Sauna",
     },
   ];
 

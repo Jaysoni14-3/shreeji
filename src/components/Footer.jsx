@@ -6,7 +6,6 @@ import {
   FaInstagram,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaYoutube,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -46,18 +45,14 @@ const Footer = () => {
   const socialLinks = [
     {
       id: 1,
-      href: "#",
+      href:
+        "https://www.facebook.com/profile.php?id=61551824529666&mibextid=ZbWKwL",
       icon: <FaFacebookF className="text-primary-color" size={18} />,
     },
     {
       id: 2,
-      href: "#",
+      href: "https://instagram.com/shreejimumbai?igshid=NjIwNzIyMDk2Mg==",
       icon: <FaInstagram className="text-primary-color" size={18} />,
-    },
-    {
-      id: 3,
-      href: "#",
-      icon: <FaYoutube className="text-primary-color" size={18} />,
     },
   ];
 

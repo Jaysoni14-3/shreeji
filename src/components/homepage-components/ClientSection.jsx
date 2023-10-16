@@ -4,6 +4,12 @@ import ClientImage3 from "../../assets/Images/Clients/Osawal-Buliders-Ltd.jpg";
 import ClientImage4 from "../../assets/Images/Clients/Living-stones.png";
 import ClientImage5 from "../../assets/Images/Clients/Ruby.png";
 import ClientImage6 from "../../assets/Images/Clients/Apex.jpg";
+import ClientImage7 from "../../assets/Images/Clients/aramus.png";
+import ClientImage8 from "../../assets/Images/Clients/casa-logo.png";
+import ClientImage9 from "../../assets/Images/Clients/fortune.png";
+import ClientImage10 from "../../assets/Images/Clients/girivihar.png";
+import ClientImage11 from "../../assets/Images/Clients/kabris-farm.png";
+import ClientImage12 from "../../assets/Images/Clients/shivshakti.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Zoom } from "swiper/modules";
@@ -14,7 +20,7 @@ import "swiper/css";
 const ClientSection = () => {
   const clientSectionData = {
     smallHeader: "Our clients",
-    header: "Our Valuable clients",
+    header: "Our valuable clients",
   };
 
   // Array of images that are imported above
@@ -25,6 +31,12 @@ const ClientSection = () => {
     { id: 4, imgSrc: ClientImage4 },
     { id: 5, imgSrc: ClientImage5 },
     { id: 6, imgSrc: ClientImage6 },
+    { id: 7, imgSrc: ClientImage7 },
+    { id: 8, imgSrc: ClientImage8 },
+    { id: 9, imgSrc: ClientImage9 },
+    { id: 10, imgSrc: ClientImage10 },
+    { id: 11, imgSrc: ClientImage11 },
+    { id: 12, imgSrc: ClientImage12 },
   ];
 
   return (

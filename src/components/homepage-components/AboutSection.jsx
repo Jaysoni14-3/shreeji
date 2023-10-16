@@ -1,7 +1,7 @@
 import { FaAngleRight } from "react-icons/fa";
-import aboutImage1 from "../../assets/Images/about-us-image-1.png";
-import aboutImage2 from "../../assets/Images/about-us-image-2.png";
-import aboutImage3 from "../../assets/Images/about-us-image-3.png";
+import aboutImage1 from "../../assets/Images/about-us-image-1.jpg";
+import aboutImage2 from "../../assets/Images/about-us-image-2.jpg";
+import aboutImage3 from "../../assets/Images/about-us-image-3.jpg";
 import { Link } from "react-router-dom";
 
 const AboutSection = () => {
@@ -14,13 +14,12 @@ const AboutSection = () => {
   const aboutSectionData = {
     smallHeader: "about us",
     header:
-      "Your One-Stop Destination for Pool Design, Consultancy, and Maintenance",
+      "Your one-stop destination for pool design, consultancy, and maintenance",
     bodyText:
       "Welcome to Shreeji Mumbai, your premier destination for all for all the swimming pool related consultation & requirements. Shreeji is one of the best company for the swimming pool filtration system, jacuzzi, fountains, steam & sauna. Our company also provides, all the equipment and chemicals to maintain swimming pool, lights for pool, replacements parts for filtration system.",
   };
 
   return (
-    // About us section
     <div className="bg-neutral-50">
       <section className="about-section section max-container text-center flex-center flex-col">
         <div className="text-container max-w-[645px] ">
@@ -32,12 +31,12 @@ const AboutSection = () => {
           {aboutImages.map((image) => (
             <div
               key={image.id}
-              className="about-image-container overflow-hidden rounded-lg"
+              className="about-image-container h-[300px] overflow-hidden rounded-lg"
             >
               <img
                 src={image.imgSrc}
                 alt={image.altTag}
-                className="object-cover aspect-video w-full h-full "
+                className="object-cover bg-top w-full h-full "
               />
             </div>
           ))}
