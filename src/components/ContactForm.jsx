@@ -7,12 +7,19 @@ const ContactForm = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const emailMessage = {
+      sender: senderEmail,
+      subject: subject,
+      body: body,
+    };
+
+    console.log(emailMessage);
     // Send the values to firebase
   };
 
   return (
     <div className="form-container rounded-md  w-full">
-      <form onSubmit={() => sendEmail()} className="flex flex-col gap-2">
+      <form onSubmit={(e) => sendEmail(e)} className="flex flex-col gap-2">
         <div className="email ">
           <label
             htmlFor="email"
