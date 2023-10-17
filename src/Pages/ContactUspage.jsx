@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import ContactForm from "../components/ContactForm";
 
 const ContactUspage = () => {
-  // todo: add contact us paragraph instead of lorem ipsum
   const contactUsData = {
     pageHeader: "We are open to discuss",
     paragraph:
@@ -12,7 +11,7 @@ const ContactUspage = () => {
   };
 
   return (
-    <section className="contact-us-page section max-container flex flex-col">
+    <section className="contact-us-page snpection max-container flex flex-col">
       <div className="section-header">
         <div className="breadcrumb uppercase text-sm flex items-center justify-start gap-2">
           <Link
