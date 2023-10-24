@@ -9,11 +9,27 @@ import { db } from "../firebase";
 const AdminPage = () => {
   const [productsData, setProductsData] = useState([]);
   const [galleryData, setGalleryData] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   const [showProductModal, setShowProductModal] = useState(false);
   const [showGalleryModal, setShowGalleryModal] = useState(false);
 
   useEffect(() => {
+    const fetchAllMessages = async () => {
+      let messageList = [];
+      try {
+        const querySnapshot = await getDocs(collection(db, "messages"));
+        querySnapshot.forEach((doc) => {
+          messageList.push({ id: doc.id, ...doc.data() });
+        });
+        setMessages(messageList);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchAllMessages();
+
     const fetchProductData = async () => {
       let productsList = [];
       try {
@@ -43,7 +59,7 @@ const AdminPage = () => {
     fetchGalleryData();
   }, []);
 
-  console.log(galleryData);
+  // console.log(galleryData);
 
   const deleteProduct = async (e) => {
     const currentId = e.currentTarget.id;
@@ -67,6 +83,17 @@ const AdminPage = () => {
     }
   };
 
+  const deleteMessage = async (e) => {
+    const currentId = e.currentTarget.id;
+    if (window.confirm("Delete this message?")) {
+      await deleteDoc(doc(db, "messages", currentId));
+      alert("Deleted " + currentId + " from your messages");
+      window.location.reload();
+    } else {
+      return;
+    }
+  };
+
   // One the modal
   const openProductForm = () => {
     setShowProductModal((prev) => !prev);
@@ -76,9 +103,50 @@ const AdminPage = () => {
     setShowGalleryModal((prev) => !prev);
   };
 
+
   return (
     <>
       <div className="admin-page relative section max-container">
+        <section className="messages-section mb-4">
+          <div className="section-header flex-between mb-4">
+            <h2 className="text-neutral-900">Messages</h2>
+          </div>
+          <div className="section-body grid lg:grid-cols-2 gap-2">
+            {messages.map((message) => (
+              <div
+                className="relative border p-4 border-neutral-300 rounded-lg"
+                key={message.id}
+              >
+                <div
+                  onClick={deleteMessage}
+                  id={message.id}
+                  className="delete-icon p-2 bg-white rounded-full absolute right-2 top-2 cursor-pointer"
+                >
+                  <FaTrashAlt className="text-red-500" />
+                </div>
+                <div className="sender flex items-baseline">
+                  <label className="text-neutral-600 text-sm me-1">
+                    sender:
+                  </label>
+                  <p>{message.sender}</p>
+                </div>
+                <div className="subject flex items-baseline">
+                  <label className="text-neutral-600 text-sm me-1">
+                    subject:
+                  </label>
+                  <p>{message.subject}</p>
+                </div>
+                <div className="subject flex items-baseline">
+                  <label className="text-neutral-600 text-sm me-1">body:</label>
+                  <p>{message.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="seperator w-full my-8 bg-neutral-700 h-[1px]"></div>
+
         <section className="products-section">
           <div className="section-header flex-between mb-4">
             <h2 className="text-neutral-900">Products</h2>

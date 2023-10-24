@@ -1,20 +1,29 @@
 import { useState } from "react";
 
+import { db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
+
 const ContactForm = () => {
   const [senderEmail, setSenderEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     const emailMessage = {
       sender: senderEmail,
       subject: subject,
       body: body,
     };
-
-    console.log(emailMessage);
-    // Send the values to firebase
+    // Add new product in the firebase firestore
+    await addDoc(collection(db, "messages"), emailMessage);
+    alert(
+      "Message sent, thank you for interacting with us, our team will get back to you in the next 24 hours."
+    );
+    setSenderEmail("");
+    setSubject("");
+    setBody("");
+    // console.log(emailMessage);
   };
 
   return (
