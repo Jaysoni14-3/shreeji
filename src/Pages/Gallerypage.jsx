@@ -59,6 +59,8 @@ const Gallerypage = () => {
     (image) => image.category === "fountain"
   );
 
+  console.log(fountainImages);
+
   return (
     <>
       <section className="gallery-page section max-container">
