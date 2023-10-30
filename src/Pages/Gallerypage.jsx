@@ -59,7 +59,7 @@ const Gallerypage = () => {
     (image) => image.category === "fountain"
   );
 
-  console.log(fountainImages);
+  // console.log(fountainImages);
 
   return (
     <>
