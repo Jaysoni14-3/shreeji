@@ -31,7 +31,7 @@ const Gallerypage = () => {
     fetchGalleryImages();
   }, []);
 
-  console.log(galleryImages);
+  // console.log(galleryImages);
 
   const handleImageClick = (imageUrl) => {
     setSelectedImageUrl(imageUrl);
@@ -59,7 +59,10 @@ const Gallerypage = () => {
     (image) => image.category === "fountain"
   );
 
-  // console.log(fountainImages);
+  console.log(swimmingPoolImages);
+  console.log(jaccuzziImages);
+  console.log(saunaImages);
+  console.log(fountainImages);
 
   return (
     <>
