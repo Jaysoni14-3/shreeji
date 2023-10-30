@@ -6,7 +6,7 @@ import { storage } from "../firebase";
 import { db } from "../firebase";
 import { v4 as uuidv4 } from "uuid";
 
-const GalleryForm = ({ openGalleryForm }) => {
+const GalleryForm = ({ openGalleryForm, setShowGalleryModal }) => {
   const [data, setData] = useState({});
   const [galleryImage, setGalleryImage] = useState("");
   const [galleryError, setGalleryError] = useState(false);
@@ -56,7 +56,7 @@ const GalleryForm = ({ openGalleryForm }) => {
     setData({ ...data, [id]: value });
   };
 
-  console.log(data);
+  // console.log(data);
 
   // Submits the product to firebase
   const submitNewGallery = async (e) => {
@@ -75,6 +75,7 @@ const GalleryForm = ({ openGalleryForm }) => {
     });
     alert("Added to your gallery");
     console.log(galleryImage);
+    setShowGalleryModal(false);
   };
   return (
     <div className="absolute inset-0 dark-overlay z-50">

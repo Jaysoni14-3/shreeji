@@ -31,6 +31,8 @@ const Gallerypage = () => {
     fetchGalleryImages();
   }, []);
 
+  console.log(galleryImages);
+
   const handleImageClick = (imageUrl) => {
     setSelectedImageUrl(imageUrl);
     setIsModalOpen(true);
@@ -57,14 +59,12 @@ const Gallerypage = () => {
     (image) => image.category === "fountain"
   );
 
-  console.log(jaccuzziImages);
-
-  console.log(swimmingPoolImages);
-
   return (
     <>
       <section className="gallery-page section max-container">
-        {swimmingPoolImages ? (
+        {swimmingPoolImages.length === 0 ? (
+          ""
+        ) : (
           <div className="swimming-pool-container">
             <h3 className="uppercase text-black">Swimming Pools</h3>
             <div className="swimming-pool-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -81,11 +81,11 @@ const Gallerypage = () => {
               ))}
             </div>
           </div>
-        ) : (
-          ""
         )}
 
-        {jaccuzziImages ? (
+        {jaccuzziImages.length === 0 ? (
+          ""
+        ) : (
           <div className="jaccuzzi-container mt-4">
             <h3 className="uppercase text-black">Jaccuzzis</h3>
             <div className="jaccuzzi-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -94,17 +94,19 @@ const Gallerypage = () => {
                   <LazyLoadImage
                     effect="blur"
                     className="h-auto w-full object-cover bg-center rounded-lg"
-                    src={image.imgSrc}
-                    alt={image.imgSrc}
-                    onClick={() => handleImageClick(image.imgSrc)}
+                    src={image.image}
+                    alt={image.image}
+                    onClick={() => handleImageClick(image.image)}
                   />
                 </div>
               ))}
             </div>
           </div>
-        ) : null}
+        )}
 
-        {fountainImages ? (
+        {fountainImages.length === 0 ? (
+          ""
+        ) : (
           <div className="fountain-container mt-4">
             <h3 className="uppercase text-black">Fountains</h3>
             <div className="statue-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -112,20 +114,20 @@ const Gallerypage = () => {
                 <div key={image.id} className="image-container">
                   <LazyLoadImage
                     effect="blur"
-                    className="h-auto w-full object-cover bg-center rounded-lg"
-                    src={image.imgSrc}
-                    alt={image.imgSrc}
-                    onClick={() => handleImageClick(image.imgSrc)}
+                    className="max-h-[400px] w-full object-cover bg-center rounded-lg"
+                    src={image.image}
+                    alt={image.image}
+                    onClick={() => handleImageClick(image.image)}
                   />
                 </div>
               ))}
             </div>
           </div>
-        ) : (
-          ""
         )}
 
-        {saunaImages ? (
+        {saunaImages.length === 0 ? (
+          ""
+        ) : (
           <div className="sauna-container mt-4">
             <h3 className="uppercase text-black">Steam and Saunas</h3>
             <div className="sauna-images mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -134,16 +136,14 @@ const Gallerypage = () => {
                   <LazyLoadImage
                     effect="blur"
                     className="h-auto w-full object-cover bg-center rounded-lg"
-                    src={image.imgSrc}
-                    alt={image.imgSrc}
-                    onClick={() => handleImageClick(image.imgSrc)}
+                    src={image.image}
+                    alt={image.image}
+                    onClick={() => handleImageClick(image.image)}
                   />
                 </div>
               ))}
             </div>
           </div>
-        ) : (
-          ""
         )}
       </section>
       <ImageModal

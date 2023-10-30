@@ -16,22 +16,18 @@ const ContactSection = () => {
       href:
         "https://www.google.com/maps/place/19%C2%B015'31.6%22N+72%C2%B051'47.5%22E/@19.258786,72.863188,17z/data=!3m1!4b1!4m4!3m3!8m2!3d19.258786!4d72.863188",
       icon: <FaMapMarkerAlt size={18} />,
-      text:
-        // "Shop No 2, Shree Giriraj CHS, Anand Nagar, Near Rajendra Complex, Dahisar (East), Mumbai - 400068.",
-        "Address",
+      text: "Address",
     },
     {
       id: 2,
       href: "mailto:shreejigroupmumbai@gmail.com",
       icon: <FaEnvelope size={18} />,
-      // text: "shreejigroupmumbai@gmail.com",
       text: "Email",
     },
     {
       id: 3,
       href: "tel:+91 90043 74468",
       icon: <FaPhoneAlt size={18} />,
-      // text: "+91 90043 74468",
       text: "Phone number",
     },
   ];
@@ -56,9 +52,14 @@ const ContactSection = () => {
         <div className="contact-detail-container flex flex-col sm:mx-2 sm:px-2 lg:mx-8 lg:px-4 text-start w-full">
           <ContactForm />
           <hr className="my-4" />
-          <div className="contact-container flex flex-row flex-wrap justify-between w-full">
+          <div className="contact-container grid sm:grid-cols-2 gap-2 w-full">
             {contactDetails.map((contact) => (
-              <Link key={contact.id} to={contact.href} target="_blank">
+              <Link
+                className="w-full"
+                key={contact.id}
+                to={contact.href}
+                target="_blank"
+              >
                 <div className="flex items-center mt-2 sm:mt-0 py-2 px-4 rounded-lg border hover:bg-neutral-100 transition-colors">
                   <div className="icon mr-2">{contact.icon}</div>
                   <div className="text">

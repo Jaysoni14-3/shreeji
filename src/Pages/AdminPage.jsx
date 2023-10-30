@@ -236,8 +236,8 @@ const AdminPage = () => {
         </section>
       </div>
 
-      {showProductModal && <ProductForm openProductForm={openProductForm} />}
-      {showGalleryModal && <GalleryForm openGalleryForm={openGalleryForm} />}
+      {showProductModal && <ProductForm openProductForm={openProductForm} setShowProductModal={setShowProductModal} />}
+      {showGalleryModal && <GalleryForm openGalleryForm={openGalleryForm} setShowGalleryModal={setShowGalleryModal} />}
     </>
   );
 };

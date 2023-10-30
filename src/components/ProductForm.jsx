@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { storage, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-const ProductForm = ({ openProductForm }) => {
+const ProductForm = ({ openProductForm, setShowProductModal }) => {
   const [data, setData] = useState({});
   const [productImage, setProductImage] = useState("");
 
@@ -74,6 +74,7 @@ const ProductForm = ({ openProductForm }) => {
       timeStamp: serverTimestamp(),
     });
     alert("Added to your products");
+    setShowProductModal(false);
   };
 
   return (
