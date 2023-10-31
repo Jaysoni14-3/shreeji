@@ -59,10 +59,10 @@ const Gallerypage = () => {
     (image) => image.category === "fountain"
   );
 
-  console.log(swimmingPoolImages);
-  console.log(jaccuzziImages);
-  console.log(saunaImages);
-  console.log(fountainImages);
+  // console.log(swimmingPoolImages);
+  // console.log(jaccuzziImages);
+  // console.log(saunaImages);
+  // console.log(fountainImages);
 
   return (
     <>
