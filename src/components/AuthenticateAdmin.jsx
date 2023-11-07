@@ -10,8 +10,8 @@ const AuthenticateAdmin = () => {
   const authenticate = (e) => {
     e.preventDefault();
 
-    const validUsername = import.meta.env.VITE_ADMIN_USERNAME;
-    const validPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+    const validUsername = "shreeji@admin";
+    const validPassword = "shreeji_2022";
 
     if (username === validUsername && password === validPassword) {
       setAuthenticated(true);
